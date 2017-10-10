@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context="com.akilommar.rpi3_androidthings_basic.MainActivity">
+
+    <TextView
+        android:id="@+id/on_off_pushbutton_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="On/Off Push Button Status"
+        android:textSize="20dp"
+        android:textColor="@color/TextViews_Text"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp" />
+
+    <Switch
+        android:id="@+id/on_off_pushbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:layout_toRightOf="@+id/on_off_pushbutton_text"
+        android:layout_alignBottom="@+id/on_off_pushbutton_text" />
+
+    <TextView
+        android:id="@+id/led_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Led On/Off Status               "
+        android:textSize="20dp"
+        android:textColor="@color/TextViews_Text"
+        android:layout_alignLeft="@id/on_off_pushbutton_text"
+        android:layout_marginTop="100dp" />
+
+    <ImageSwitcher
+        android:id="@+id/led_image_switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/on_off_pushbutton"
+        android:layout_toRightOf="@+id/led_text"
+        android:layout_alignBottom="@+id/led_text"
+        android:layout_alignTop="@+id/led_text"></ImageSwitcher>
+
+</RelativeLayout>
