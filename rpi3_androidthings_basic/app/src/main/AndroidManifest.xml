@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.akilommar.rpi3_androidthings_basic">
 
-    <!--1.  We need to specify tp use the android things library -->
-    <uses-library android:name="com.google.android.things"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--1.  We need to specify tp use the android things library -->
+        <uses-library android:name="com.google.android.things"/>
         <activity android:name="com.akilommar.rpi3_androidthings_basic.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
