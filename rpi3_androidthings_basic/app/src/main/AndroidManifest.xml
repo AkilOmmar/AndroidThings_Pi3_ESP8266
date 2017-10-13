@@ -15,8 +15,14 @@
         <activity android:name="com.akilommar.rpi3_androidthings_basic.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--2.  We need to add this filter to make to autostart on boot by default in main when
+		    Android Things starts (IOT_LAUNCHER)-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.IOT_LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
 
         </activity>

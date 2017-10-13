@@ -2,14 +2,22 @@ package com.akilommar.rpi3_androidthings_basic;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageSwitcher;
 import android.app.ActionBar.LayoutParams;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ViewSwitcher.ViewFactory;
 import android.view.View;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class MainActivity extends AppCompatActivity {
     private ImageSwitcher LedSwitcher;
+    private ImageView rpi3Image;
+    private TextView LogCatText;
 
     /* Used to load the 'native-lib' library on application startup.
     static {
@@ -34,6 +42,32 @@ public class MainActivity extends AppCompatActivity {
                             return myView;
                         }
         });
+
+        // Text View for log
+        try {
+            Process process = Runtime.getRuntime().exec("logcat -d akilommar");
+            BufferedReader bufferedReader = new BufferedReader(
+                    new InputStreamReader(process.getInputStream()));
+
+            StringBuilder log=new StringBuilder();
+            String line = "";
+            while ((line = bufferedReader.readLine()) != null) {
+                log.append(line);
+            }
+            LogCatText = (TextView) findViewById(R.id.logcat_text);
+            LogCatText.setMovementMethod(new ScrollingMovementMethod());
+            LogCatText.setText("**** LOG CAT LOG DISPLAYED HERE *******");
+            LogCatText.append(log.toString());
+
+        } catch (IOException e) {
+            // Handle Exception
+        }
+
+
+        // rpi3 pinout image
+        rpi3Image = (ImageView) findViewById(R.id.pi3_pines_image_view);
+        rpi3Image.setImageResource(R.drawable.pinout_raspberrypi);
+
         /* Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());

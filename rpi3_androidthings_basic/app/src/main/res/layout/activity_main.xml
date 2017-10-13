@@ -34,15 +34,31 @@
         android:textSize="20dp"
         android:textColor="@color/TextViews_Text"
         android:layout_alignLeft="@id/on_off_pushbutton_text"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="80dp" />
 
     <ImageSwitcher
         android:id="@+id/led_image_switcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/on_off_pushbutton"
-        android:layout_toRightOf="@+id/led_text"
+        android:layout_alignEnd="@+id/on_off_pushbutton"
+        android:layout_toEndOf="@+id/led_text"
         android:layout_alignBottom="@+id/led_text"
-        android:layout_alignTop="@+id/led_text"></ImageSwitcher>
+        android:layout_alignTop="@+id/led_text"> </ImageSwitcher>
+
+    <ImageView
+        android:id="@+id/pi3_pines_image_view"
+        android:layout_width="280dp"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"/>
+
+    <EditText
+        android:id="@+id/logcat_text"
+        android:gravity="bottom"
+        android:scrollbars="horizontal"
+        android:background="@drawable/my_text_view_log_border"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="300dp"
+        android:layout_alignBottom="@+id/pi3_pines_image_view" />
 
 </RelativeLayout>

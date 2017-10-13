@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="log_background_color">#FFFFFF</color>
+    <color name="log_border_color">#3F51B5</color>
     <color name="TextViews_Text">#000000</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
